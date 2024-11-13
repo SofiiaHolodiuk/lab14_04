@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.4</title>
+</head>
+<body>
+
+    <script>
+        // Створення масивів
+        let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        let citrus = ['orange', 'lemon', 'lime'];
+
+        // Виведення масиву fruits
+        document.write("Масив fruits: " + fruits.join(", ") + "<br>");
+
+        // Виведення масиву citrus
+        document.write("Масив citrus: " + citrus.join(", ") + "<br>");
+
+        // Об'єднання масивів fruits і citrus
+        let combined = fruits.concat(citrus);
+        document.write("Об'єднаний масив fruits і citrus: " + combined.join(", ") + "<br>");
+
+        // Вставлення елементів після mango
+        let fruitsWithNew = [...fruits];
+        let mangoIndex = fruitsWithNew.indexOf('mango');
+        if (mangoIndex !== -1) {
+            fruitsWithNew.splice(mangoIndex + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        }
+        document.write("Масив fruits після вставки елементів після mango: " + fruitsWithNew.join(", ") + "<br>");
+
+        // Видалення останніх 3 елементів
+        let fruitsRemoved = [...fruits];
+        fruitsRemoved.splice(-3);
+        document.write("Масив fruits після видалення останніх 3 елементів: " + fruitsRemoved.join(", ") + "<br>");
+
+        // Виведення відсортованого масиву fruits (алфавітний порядок)
+        let fruitsSorted = [...fruits].sort();
+        document.write("Відсортований масив fruits (алфавітний порядок): " + fruitsSorted.join(", ") + "<br>");
+
+        // Виведення масиву fruits у зворотному алфавітному порядку
+        let fruitsReverseSorted = [...fruits].sort().reverse();
+        document.write("Масив fruits у зворотному алфавітному порядку: " + fruitsReverseSorted.join(", ") + "<br>");
+
+        // Виведення масиву fruits, відсортованого за довжиною слів
+        let fruitsByLength = [...fruits].sort((a, b) => a.length - b.length);
+        document.write("Масив fruits, відсортований за довжиною слів: " + fruitsByLength.join(", ") + "<br>");
+    </script>
+
+</body>
+</html>
